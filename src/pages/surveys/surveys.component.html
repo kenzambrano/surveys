@@ -1,0 +1,16 @@
+<div *ngFor="let survey of surveys | async">
+    <md-card>
+        <button md-button [mdMenuTriggerFor]="menuSurvey"><md-icon>menu</md-icon> Menu</button>
+        <md-card-header>
+            <div md-card-avatar class="card-image"><md-icon>assignment_turned_in</md-icon></div>
+            <md-card-title>{{ survey.name }}</md-card-title>
+            <md-card-subtitle>Dog Breed</md-card-subtitle>
+        </md-card-header>
+        
+        <md-menu #menuSurvey="mdMenu">
+            <button md-menu-item> <md-icon> create </md-icon> Modificar </button>
+            <button md-menu-item> <md-icon> delete </md-icon> Eliminar </button>
+        </md-menu>
+    </md-card>
+    <br>
+</div>

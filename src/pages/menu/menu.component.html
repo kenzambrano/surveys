@@ -1,0 +1,13 @@
+<md-toolbar color="primary">
+    <span>Surveys ICLF</span>
+    <span class="spacer"></span>
+    <button md-button [mdMenuTriggerFor]="menuRef"><md-icon>menu</md-icon> Menu</button>
+    <md-menu #menuRef="mdMenu">
+        <button routerLink="{{ menu.link }}" md-menu-item *ngFor="let menu of menus | async">
+            <md-icon>{{ menu.icon}}</md-icon> {{ menu.name }}
+        </button>
+        <button md-menu-item (click)="logout()" *ngIf="authService.user | async">
+            <md-icon>exit_to_app</md-icon>Salir
+        </button>
+    </md-menu>
+</md-toolbar>

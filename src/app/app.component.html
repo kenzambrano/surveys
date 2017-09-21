@@ -1,0 +1,8 @@
+<div *ngIf="authService.user | async">
+    <my-menu></my-menu>
+    <!-- <h1 *ngIf="authService.user | async">{{ (authService.user | async)?.email }}!</h1> -->
+    <router-outlet></router-outlet>
+    <!-- <button md-fab md-b class="md-fab-top-right"><md-icon>more</md-icon></button> -->
+</div>
+
+<login></login>

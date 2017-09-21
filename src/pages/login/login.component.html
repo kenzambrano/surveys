@@ -1,0 +1,24 @@
+<md-grid-list cols="6">
+		<md-grid-tile [colspan]="2" [rowspan]="1"></md-grid-tile>
+		<md-grid-tile [colspan]="2" [rowspan]="3">
+			<md-card class="login" *ngIf="!(authService.user | async)" align="center">
+					<md-card-header align="center">
+						<md-card-title><h1 class="mat-display-1">Surveys ICLF</h1></md-card-title>
+					</md-card-header>
+					<img mdCardImage class="login-img" src="../../assets/img/logo-small.png">
+					<md-card-content>
+						<md-input-container>
+							<input type="text" mdInput placeholder="Email" [(ngModel)]="email">
+						</md-input-container>
+						<md-input-container>
+							<input type="password" mdInput placeholder="Password" [(ngModel)]="password">
+						</md-input-container>
+					</md-card-content>
+					<md-card-actions align="start|end">
+						<button md-raised-button (click)="login()" [disabled]="!email || !password">Entrar <md-icon>open_in_new</md-icon></button>
+						<!-- <button md-raised-button (click)="signup()" [disabled]="!email || !password">Registrarse</button> -->
+					</md-card-actions>
+				</md-card>
+		</md-grid-tile>
+	<md-grid-tile [colspan]="2" [rowspan]="1"></md-grid-tile>
+</md-grid-list>
